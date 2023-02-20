@@ -1,6 +1,11 @@
-# Arco Nuxt Amin
+# Arco Nuxt3 Amin
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a simple template built with nuxt3 and acro design.
+
+## Library
+
+- [Nuxt3](https://nuxt.com/)
+- [Arco Design Vue](https://arco.design/vue)
 
 ## Setup
 
@@ -9,12 +14,6 @@ Make sure to install the dependencies:
 ```bash
 # yarn
 yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
 ```
 
 ## Development Server
@@ -22,7 +21,7 @@ pnpm install
 Start the development server on http://localhost:3000
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 ## Production
@@ -30,7 +29,7 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+yarn run build
 ```
 
 Locally preview production build:
@@ -38,5 +37,3 @@ Locally preview production build:
 ```bash
 npm run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
