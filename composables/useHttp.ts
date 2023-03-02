@@ -1,6 +1,6 @@
 import { TOKEN_KEY } from "~/constants";
 import { useCache } from "./useCache";
-import { ErrorCode } from "~/utils/errorCode";
+import { ErrorCode } from "~~/constants/errorCode";
 import { Message } from "@arco-design/web-vue";
 import { Result } from "~~/types";
 

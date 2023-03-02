@@ -1,4 +1,4 @@
-import { ErrorCode } from "~/utils/errorCode";
+import { ErrorCode } from "~~/constants/errorCode";
 import { UserInfo } from "~~/types";
 
 export default defineEventHandler(async (event) => {

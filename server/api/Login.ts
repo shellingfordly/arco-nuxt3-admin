@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { ErrorCode } from "~/utils/errorCode";
+import { ErrorCode } from "~~/constants/errorCode";
 import { UserInfo } from "~/types";
 
 export const TOKEN_KEY = "ARCO_NUXT_ADMIN_TOKEN";

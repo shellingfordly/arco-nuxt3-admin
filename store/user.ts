@@ -2,7 +2,7 @@ import { TOKEN_KEY } from "~~/constants";
 import { UserInfo } from "./../types/index";
 import { defineStore } from "pinia";
 import { USER_INFO } from "~/constants";
-import { ErrorCode } from "~/utils/errorCode";
+import { ErrorCode } from "~~/constants/errorCode";
 
 interface LoginRes {
   user: UserInfo;
