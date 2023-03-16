@@ -11,14 +11,24 @@ const form = reactive({
   username: "",
   password: "",
 });
+const isLogin = ref(true);
 
 async function onSubmit({ values, errors }: any) {
   if (errors) return;
-  userStore.login(values);
+
+  if (isLogin.value) {
+    userStore.login(values);
+  } else {
+    userStore.logon(values);
+    isLogin.value = true;
+  }
 }
 </script>
 
 <template>
+  <h2 class="text-2xl font-bold text-center w-[100%]">
+    {{ isLogin ? "登录" : "注册" }}
+  </h2>
   <a-form :model="form" layout="vertical" size="large" @submit="onSubmit">
     <a-form-item
       field="username"
@@ -41,7 +51,13 @@ async function onSubmit({ values, errors }: any) {
       />
     </a-form-item>
     <a-form-item>
-      <a-button html-type="submit" type="primary"> 登录 </a-button>
+      <a-button html-type="submit" type="primary" long>
+        {{ isLogin ? "登录" : "注册" }}
+      </a-button>
     </a-form-item>
   </a-form>
+  <div class="flex justify-center w-[100%]">
+    <a-button class="mr-10px" @click="isLogin = true">登录</a-button>
+    <a-button @click="isLogin = false">注册</a-button>
+  </div>
 </template>

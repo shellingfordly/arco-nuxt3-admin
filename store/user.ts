@@ -3,6 +3,7 @@ import { UserInfo } from "./../types/index";
 import { defineStore } from "pinia";
 import { USER_INFO } from "~/constants";
 import { ErrorCode } from "~~/constants/errorCode";
+import { Message } from "@arco-design/web-vue";
 
 interface LoginRes {
   user: UserInfo;
@@ -18,6 +19,7 @@ export const useUserStore = defineStore("user", () => {
     cache.setItem(USER_INFO, res.data.user);
     cache.setItem(TOKEN_KEY, res.data.token);
     useRouter().push("/");
+    Message.success(res.msg);
   }
 
   async function logout() {
@@ -27,8 +29,14 @@ export const useUserStore = defineStore("user", () => {
     useRouter().push("/login");
   }
 
+  async function logon(values: any) {
+    const res = await useHttp<LoginRes>("Logon", values);
+    Message.success(res.msg);
+  }
+
   return {
     login,
     logout,
+    logon,
   };
 });

@@ -32,6 +32,6 @@ export interface LogItem {
 export interface Result<T = any> {
   code: number;
   data: T;
-  msg?: string;
-  err?: any;
+  msg: string;
+  err: any;
 }

@@ -4,7 +4,7 @@ import { ErrorCode } from "~~/constants/errorCode";
 import { Message } from "@arco-design/web-vue";
 import { Result } from "~~/types";
 
-const whiteList = ["login"];
+const whiteList = ["login", "logon"];
 
 export async function useHttp<T = any>(
   url: string,

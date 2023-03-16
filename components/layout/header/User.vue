@@ -81,7 +81,7 @@ function onLogout() {
   <a-modal title="创建用户" v-model:visible="createUserShow" :footer="false">
     <ApiForm
       :columns="createUserColumns"
-      api-name="CreateUser"
+      api-name="Logon"
       btn-text="确定"
       @success="createUserShow = false"
     />

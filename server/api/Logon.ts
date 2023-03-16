@@ -33,7 +33,7 @@ export default defineEventHandler(async (event) => {
 
   return {
     code: ErrorCode.OK,
-    msg: "创建用户成功！",
+    msg: "注册成功！",
     data: {
       username: user.username,
       auth: user.auth,
