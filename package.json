@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "nuxt build && mkdir .output/db && touch .output/db/user.json",
+    "build": "nuxt build && mkdir .nuxt/db && touch .nuxt/db/user.json",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
