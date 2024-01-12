@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { FormColumn } from "~/types";
+import type { FormColumn } from "~/types";
 
 const props = defineProps<{
   columns: FormColumn[];
@@ -53,7 +53,7 @@ async function onSubmit({ values, errors }: any) {
       :field="column.field"
       :validate-trigger="['blur']"
       :rules="column.rules"
-      :label="column.label "
+      :label="column.label"
     >
       <a-input
         v-model="form[column.field]"

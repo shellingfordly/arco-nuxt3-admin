@@ -12,8 +12,8 @@ export default defineNuxtPlugin(() => {
 
   router.afterEach(async (to) => {
     start();
-    const cache = await useCache();
-    const token = await cache.getItem(TOKEN_KEY);
+    // const cache = await useCache();
+    const token = "";
 
     if (token) {
       if (to.path === "/login") {

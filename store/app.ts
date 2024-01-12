@@ -5,8 +5,8 @@ export const useAppStore = defineStore("app", () => {
   const isDark = ref(false);
 
   (async () => {
-    const cache = await useCache();
-    const _is_dark = await cache.getItem(IS_DARK);
+    // const cache = await useCache();
+    const _is_dark = false;
     if (_is_dark != null) {
       isDark.value = Boolean(_is_dark);
     }

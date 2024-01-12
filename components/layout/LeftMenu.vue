@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { useMenuStore } from "~/store/menu";
 import { reactive } from "vue";
-import { MenuItem } from "~~/types";
+import type { MenuItem } from "~~/types";
 
 const menuStore = useMenuStore();
 const menus = ref<MenuItem[]>([]);
@@ -13,7 +13,9 @@ const openKey = route.path.split("/")[1];
 if (openKey) defaultOpenKeys.push("/" + openKey);
 
 onMounted(async () => {
-  const iconModels = await import("@arco-design/web-vue/es/icon");
+  const iconModels: Record<string, any> = await import(
+    "@arco-design/web-vue/es/icon"
+  );
 
   menus.value = menuStore.leftMenus?.map((m) => {
     return { ...m, icon: h(iconModels[m.icon]) };
@@ -25,7 +27,7 @@ onMounted(async () => {
   <a-menu
     :defaultOpenKeys="defaultOpenKeys"
     :defaultSelectedKeys="defaultSelectedKeys"
-    @menuItemClick="(key) => $router.push(key)"
+    @menuItemClick="(key:string) => $router.push(key)"
   >
     <template v-for="menu in menus">
       <template v-if="menu.children?.length">

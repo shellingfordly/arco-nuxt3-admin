@@ -1,8 +1,5 @@
-import { TOKEN_KEY } from "~~/constants";
-import { UserInfo } from "./../types/index";
+import type { UserInfo } from "~~/types/";
 import { defineStore } from "pinia";
-import { USER_INFO } from "~/constants";
-import { ErrorCode } from "~~/constants/errorCode";
 import { Message } from "@arco-design/web-vue";
 
 interface LoginRes {
@@ -12,20 +9,20 @@ interface LoginRes {
 
 export const useUserStore = defineStore("user", () => {
   async function login(values: any) {
-    const cache = await useCache();
+    // const cache = await useCache();
     const res = await useHttp<LoginRes>("Login", values);
     if (res.code > ErrorCode.OK) return;
 
-    cache.setItem(USER_INFO, res.data.user);
-    cache.setItem(TOKEN_KEY, res.data.token);
+    // cache.setItem(USER_INFO, res.data.user);
+    // cache.setItem(TOKEN_KEY, res.data.token);
     useRouter().push("/");
     Message.success(res.msg);
   }
 
   async function logout() {
-    const cache = await useCache();
-    cache.removeItem(USER_INFO);
-    cache.removeItem(TOKEN_KEY);
+    // const cache = await useCache();
+    // cache.removeItem(USER_INFO);
+    // cache.removeItem(TOKEN_KEY);
     useRouter().push("/login");
   }
 

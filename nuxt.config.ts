@@ -1,13 +1,10 @@
 export default defineNuxtConfig({
   // ssr: false,
-  windicss: {
-    config: {
-      attributify: true,
-    },
+  imports: {
+    dirs: ["composables/**", "constants/**"],
   },
-  // 插件方式引入arco-design组件
   plugins: ["@/plugins/arco-design"],
-  modules: ["@pinia/nuxt", "nuxt-windicss"],
+  modules: ["@pinia/nuxt", "@vueuse/nuxt", "@unocss/nuxt"],
   nitro: {
     storage: {
       db: {

@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { Modal } from "@arco-design/web-vue";
-import { UserInfo } from "~/types";
-import { USER_INFO } from "~~/constants";
+import type { UserInfo } from "~/types";
 import { useUserStore } from "~~/store/user";
 
 const userStore = useUserStore();
@@ -42,8 +41,8 @@ const columns = [
 ];
 
 onMounted(async () => {
-  const cache = await useCache();
-  userInfo.value = (await cache.getItem(USER_INFO)) as any;
+  // const cache = await useCache();
+  // userInfo.value = (await cache.getItem(USER_INFO)) as any;
 });
 
 function onLogout() {
