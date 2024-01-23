@@ -1,5 +1,5 @@
 import { ErrorCode } from "~~/constants/errorCode";
-import { UserInfo } from "~~/types";
+import type { UserInfo } from "~~/types";
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);

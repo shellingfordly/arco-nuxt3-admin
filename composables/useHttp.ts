@@ -8,23 +8,28 @@ export async function useHttp<T = any>(
   url: string,
   values?: any
 ): Promise<Result<T>> {
-  // const cache = await useCache();
-  const token = "";
+  const { getToken } = useLogin();
+  const token = getToken();
   // 未登录
   if (!token && !whiteList.includes(url.toLowerCase())) {
     Message.error("用户未登录！");
     return {} as any;
   }
 
-  const res = ((await useFetch(`/api/${url}`, {
+  const { data } = await useFetch<Result>(`/api/${url}`, {
     params: values,
     headers: {
-      Authorization: token,
+      Authorization: token!,
     },
-  })) as any) as Result;
+  });
 
-  if (res.code > ErrorCode.OK && res.msg) {
-    Message.error(res.msg);
+  if (data.value == null) {
+    return {} as Result;
   }
-  return res;
+
+  if (data.value.code > ErrorCode.OK) {
+    Message.error(data.value.msg || "请求出错！");
+  }
+
+  return data.value;
 }

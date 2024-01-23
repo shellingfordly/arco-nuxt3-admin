@@ -8,22 +8,23 @@ interface LoginRes {
 }
 
 export const useUserStore = defineStore("user", () => {
+  const router = useRouter();
+  const { setUserInfo, setToken, removeAll } = useLogin();
+
   async function login(values: any) {
-    // const cache = await useCache();
     const res = await useHttp<LoginRes>("Login", values);
     if (res.code > ErrorCode.OK) return;
+    console.log(res)
 
-    // cache.setItem(USER_INFO, res.data.user);
-    // cache.setItem(TOKEN_KEY, res.data.token);
-    useRouter().push("/");
+    setUserInfo(res.data.user);
+    setToken(res.data.token);
+    router.push("/");
     Message.success(res.msg);
   }
 
   async function logout() {
-    // const cache = await useCache();
-    // cache.removeItem(USER_INFO);
-    // cache.removeItem(TOKEN_KEY);
-    useRouter().push("/login");
+    removeAll();
+    router.push("/login");
   }
 
   async function logon(values: any) {

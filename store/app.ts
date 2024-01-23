@@ -1,5 +1,4 @@
 import { defineStore } from "pinia";
-import { IS_DARK } from "~~/constants";
 
 export const useAppStore = defineStore("app", () => {
   const isDark = ref(false);

@@ -8,6 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.1",
     "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "^18.14.0",
     "@types/nprogress": "^0.2.0",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@arco-design/web-vue": "^2.43.1",
     "@pinia/nuxt": "^0.4.6",
+    "crypto-js": "^4.2.0",
     "json-formatter-js": "^2.3.4",
     "jsonwebtoken": "^9.0.0",
     "localforage": "^1.10.0",

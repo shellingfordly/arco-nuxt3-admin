@@ -1,31 +1,27 @@
 import { useMenuStore } from "~/store/menu";
-import { TOKEN_KEY } from "~~/constants";
 
 const { start, done } = useNProgress();
 
 export default defineNuxtPlugin(() => {
-  const menuStore = useMenuStore();
-  const router = useRouter();
-  const routes = router.getRoutes();
-
-  menuStore.generateMenus(routes);
-
-  router.afterEach(async (to) => {
-    start();
-    // const cache = await useCache();
-    const token = "";
-
-    if (token) {
-      if (to.path === "/login") {
-        router.push({ path: "/" });
-      }
-    } else {
-      if (to.path !== "/login") {
-        router.push(`/login?redirect=${to.path}`);
-      }
-    }
-  });
-  router.afterEach(() => {
-    done();
-  });
+  // const menuStore = useMenuStore();
+  // const router = useRouter();
+  // const routes = router.getRoutes();
+  // menuStore.generateMenus(routes);
+  // router.afterEach(async (to) => {
+  //   start();
+  //   const { getToken } = useLogin();
+  //   const token = getToken();
+  //   if (token) {
+  //     if (to.path === "/login") {
+  //       navigateTo({ path: "/" });
+  //     }
+  //   } else {
+  //     if (to.path !== "/login") {
+  //       navigateTo(`/login?redirect=${to.path}`);
+  //     }
+  //   }
+  // });
+  // router.afterEach(() => {
+  //   done();
+  // });
 });

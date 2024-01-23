@@ -11,6 +11,9 @@ dependencies:
   '@pinia/nuxt':
     specifier: ^0.4.6
     version: 0.4.11(vue@3.4.10)
+  crypto-js:
+    specifier: ^4.2.0
+    version: 4.2.0
   json-formatter-js:
     specifier: ^2.3.4
     version: 2.3.4
@@ -28,6 +31,9 @@ dependencies:
     version: 2.1.7(vue@3.4.10)
 
 devDependencies:
+  '@types/crypto-js':
+    specifier: ^4.2.1
+    version: 4.2.1
   '@types/jsonwebtoken':
     specifier: ^9.0.1
     version: 9.0.5
@@ -1528,6 +1534,10 @@ packages:
       minimatch: 9.0.3
     dev: true
 
+  /@types/crypto-js@4.2.1:
+    resolution: {integrity: sha512-FSPGd9+OcSok3RsM0UZ/9fcvMOXJ1ENE/ZbLfOPlBWj7BgXtEAM8VYfTtT760GiLbQIMoVozwVuisjvsVwqYWw==}
+    dev: true
+
   /@types/eslint-scope@3.7.7:
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
     dependencies:
@@ -2777,6 +2787,10 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  /crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
+    dev: false
 
   /css-declaration-sorter@7.1.1(postcss@8.4.33):
     resolution: {integrity: sha512-dZ3bVTEEc1vxr3Bek9vGwfB5Z6ESPULhcRvO472mfjVnj8jRcTnKO8/JTczlvxM10Myb+wBM++1MtdO76eWcaQ==}

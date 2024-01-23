@@ -4,9 +4,11 @@ import type { UserInfo } from "~/types";
 import { useUserStore } from "~~/store/user";
 
 const userStore = useUserStore();
-const userInfo = ref<UserInfo>({} as any);
+const { getUserInfo } = useLogin();
+const userInfo = computed<UserInfo | null>(getUserInfo);
 const username = computed(() => userInfo.value?.username?.slice(0, 3));
 const isAdmin = computed(() => userInfo.value?.auth?.includes("admin"));
+
 const modifyPwdShow = ref(false);
 const createUserShow = ref(false);
 
@@ -39,11 +41,6 @@ const columns = [
     rules: [{ required: true, message: `新密码必须填写！` }],
   },
 ];
-
-onMounted(async () => {
-  // const cache = await useCache();
-  // userInfo.value = (await cache.getItem(USER_INFO)) as any;
-});
 
 function onLogout() {
   Modal.warning({

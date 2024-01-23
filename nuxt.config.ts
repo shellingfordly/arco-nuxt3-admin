@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   // ssr: false,
   imports: {
-    dirs: ["composables/**", "constants/**"],
+    dirs: ["composables/**", "constants/**", "utils/**"],
   },
   plugins: ["@/plugins/arco-design"],
   modules: ["@pinia/nuxt", "@vueuse/nuxt", "@unocss/nuxt"],
